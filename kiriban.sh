@@ -59,7 +59,7 @@ for TAG in $TAGS; do
     echo "$(time_to_iso8601 $OLDEST_TIME) まで" >&2
 
     tempfile=log/temp.$i.json
-    jq '[.data[] |select(.topic == \"nicovideo.user.video.kiriban.play\" ) | {date:.createdAt, video: {id:.video.id, title:.video.title}, viewCount:.actionLog.viewCount}]' $FILENAME > $tempfile
+    jq '[.data[] |select(.topic == "nicovideo.user.video.kiriban.play" ) | {date:.createdAt, video: {id:.video.id, title:.video.title}, viewCount:.actionLog.viewCount}]' $FILENAME > $tempfile
 
     NEXT="&untilId=$(jq -r .meta.minId $FILENAME)"
     temps="$temps $tempfile"
@@ -69,7 +69,7 @@ for TAG in $TAGS; do
     fi
     sleep 1 # サーバーにやさしく
   done
-  jq -n '{tag: \"'$TAG'\", kiriban:[inputs[]], foundSince: \"'$(time_to_iso8601 $OLDEST_TIME)'\"}' $temps > $TAG.json
+  jq -n '{tag: "'$TAG'", kiriban:[inputs[]], foundSince: "'$(time_to_iso8601 $OLDEST_TIME)'"}' $temps > $TAG.json
   rm $temps
   echo generated: $TAG.json
 done

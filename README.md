@@ -7,7 +7,7 @@
 ## 準備
 - 以下をインストール
     - [Git for Windows](https://gitforwindows.org/) Windowsの場合)
-    - [jq](https://stedolan.github.io/jq/) (1.5で動作確認)
+    - [jq](https://stedolan.github.io/jq/) (1.6で動作確認)
 
 ## 実行方法
 - タグを引数にして kiriban.sh を実行する。
