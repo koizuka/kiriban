@@ -8,12 +8,6 @@
 - 以下をインストール
     - [git for windows](https://gitforwindows.org/)
     - [jq](https://stedolan.github.io/jq/)
-    - [node.js](https://nodejs.org/ja/)
-    - [yarn](https://classic.yarnpkg.com/ja/)
-        - URLEncodeするためだけにnode.js + yarn使ってるので、置き換えられたら依存なくせます
-
-- git bashでリポジトリを展開して、以下を実行
-    - `yarn install`
 
 ## 実行方法
 - タグを引数にして kiriban.sh を実行する。

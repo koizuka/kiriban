@@ -20,7 +20,7 @@ NOW=$(date +%s)
 LIMIT_TIME=$(( $NOW - $days * (24*60*60) ))
 
 function urlencode() {
-    yarn -s urlencode $1
+  jq -n --arg tag "$1" -r '$tag | @uri'
 }
 
 function get_tags_timeline() {
